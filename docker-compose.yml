@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  av:
+    image: mkodockx/docker-clamav:alpine
+    container_name: nextav
+    restart: unless-stopped
+    ports:
+      - '3310:3310'    
+    volumes:
+      - ./clam:/var/lib/clamav
